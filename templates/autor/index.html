@@ -15,17 +15,17 @@
             <thead>
                 <tr>
                     <th> Nome </th>
-                    <th> País de Origem </th>
+                    <th> Nacionalidade </th>
                     {% if perms.autor.detail_autor %}<th> Detalhe </th>{% endif %}
                     {% if perms.autor.change_autor %}<th> Atualizar </th>{% endif %}
                     {% if perms.autor.delete_autor %}<th> Deletar </th>{% endif %}
                 </tr>
             </thead>
             <tbody>
-                {% for autor in autors %}
+                {% for autor in autores %}
                 <tr>
                     <td> {{ autor.nome }} </td>
-                    <td> {{ autor.origem }} </td>
+                    <td> {{ autor.nacionalidade }} </td>
                     {% if perms.autor.detail_autor %}
                     <td><a href="/autor/{{autor.id}}"> Detalhe</a></td>
                     {% endif %}

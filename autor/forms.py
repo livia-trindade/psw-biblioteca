@@ -4,5 +4,5 @@ from django.forms import ModelForm
 class AutorForm(ModelForm):
     class Meta:
         model = Autor
-        fields = ['nome', 'origem']
+        fields = ['nome', 'nacionalidade']
         
