@@ -1,0 +1,42 @@
+{% extends "_base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="text-center">
+<h3>Generos e categoria</h3> <br>
+</div>
+
+<a href="create/" class="btn btn-sm btn-primary">Adicionar categoria</a> <br><br>
+
+    <div>
+        <table style="width: 85%;">
+            <thead>
+                <tr>
+                    <th> Nome </th>
+                    {% if perms.categoria.detail_categoria %}<th> Detalhe </th>{% endif %}
+                    {% if perms.categoria.change_categoria %}<th> Atualizar </th>{% endif %}
+                    {% if perms.categoria.delete_categoria %}<th> Deletar </th>{% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for categoria in categoriaes %}
+                <tr>
+                    <td> {{ categoria.nome }} </td>
+                    {% if perms.categoria.detail_categoria %}
+                    <td><a href="/categoria/{{categoria.id}}"> Detalhe</a></td>
+                    {% endif %}
+                    {% if perms.categoria.change_categoria %}
+                    <td><a href="/categoria/update/{{categoria.id}}"> Atualizar</a></td>
+                    {% endif %}
+                    {% if perms.categoria.delete_categoria %}
+                    <td><a href="/categoria/delete/{{categoria.id}}"> Deletar</a></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

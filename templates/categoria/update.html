@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block content %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form}}
+    
+        <div class="d-flex justify-content-between">
+            <a href="/categoria/" >Voltar</a>
+            <button type="submit" >Salvar</button>
+        </div>
+
+   </form>
+
+{% endblock %}
