@@ -48,7 +48,3 @@ def delete(request, id_autor):
     autor.delete()
     return HttpResponseRedirect("/autor/")
 
-@login_required
-@permission_required('autor.view_autor', raise_exception=True)
-def read(request):
-    return HttpResponse("<h3>Aqui que lê!</h3>")

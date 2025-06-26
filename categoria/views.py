@@ -7,8 +7,8 @@ from django.contrib.auth.decorators import login_required, permission_required
 @login_required
 @permission_required('categoria.view_categoria', raise_exception=True)
 def index(request):
-    categoriaes = Categoria.objects.all()
-    return render(request, 'categoria/index.html', {'categoriaes': categoriaes})
+    categorias = Categoria.objects.all()
+    return render(request, 'categoria/index.html', {'categorias': categorias})
 
 @login_required
 @permission_required('categoria.detail_categoria', raise_exception=True)
@@ -48,7 +48,3 @@ def delete(request, id_categoria):
     categoria.delete()
     return HttpResponseRedirect("/categoria/")
 
-@login_required
-@permission_required('categoria.view_categoria', raise_exception=True)
-def read(request):
-    return HttpResponse("<h3>Aqui que lê!</h3>")
