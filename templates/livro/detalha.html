@@ -1,18 +1,25 @@
 {% extends "_base.html" %}
 
 {% block content %}
-<h2>{{livro.nome}}</h2>
-<p>{{livro.autor}}</p>
-<p>{{livro.categoria}}</p>
-<p>{{livro.isbn}}</p>
-<p>{{livro.editora}}</p>
-<p>{{livro.ano_publicacao}}</p>
-<p>{{livro.quantidade}}</p>
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h3 class="card-title text-primary mb-4">{{ livro.nome }}</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Autor:</strong> {{ livro.autor }}</li>
+                <li class="list-group-item"><strong>Categoria:</strong> {{ livro.categoria }}</li>
+                <li class="list-group-item"><strong>ISBN:</strong> {{ livro.isbn }}</li>
+                <li class="list-group-item"><strong>Editora:</strong> {{ livro.editora }}</li>
+                <li class="list-group-item"><strong>Ano de Publicação:</strong> {{ livro.ano_publicacao }}</li>
+                <li class="list-group-item"><strong>Quantidade:</strong> {{ livro.quantidade }}</li>
+            </ul>
 
-
-
-<div>
-   <a href="/livro/" >Voltar</a>
+            <div class="mt-4">
+                <a href="/livro/" class="btn btn-outline-secondary">
+                    ← Voltar
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
-
 {% endblock %}
