@@ -7,8 +7,8 @@ from django.contrib.auth.decorators import login_required, permission_required
 @login_required
 @permission_required('livro.view_livro', raise_exception=True)
 def index(request):
-    livroes = Livro.objects.all()
-    return render(request, 'livro/index.html', {'livroes': livroes})
+    livros = Livro.objects.all()
+    return render(request, 'livro/index.html', {'livros': livros})
 
 @login_required
 @permission_required('livro.detail_livro', raise_exception=True)

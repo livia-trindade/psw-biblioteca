@@ -4,4 +4,4 @@ from django.forms import ModelForm
 class LivroForm(ModelForm):
     class Meta:
         model = Livro
-        fields = ['nome', 'autor', 'categoria']
+        fields = ['nome', 'isbn', 'editora', 'ano_publicacao', 'quantidade', 'autor', 'categoria']
