@@ -4,4 +4,4 @@ from django.forms import ModelForm
 class CategoriaForm(ModelForm):
     class Meta:
         model = Categoria
-        fields = ['nome']
+        fields = ['nome', 'descricao']
