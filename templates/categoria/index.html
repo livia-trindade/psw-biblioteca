@@ -5,7 +5,7 @@
 {% block content %}
 
 <div class="text-center">
-<h3>Generos e categoria</h3> <br>
+<h3>Categorias</h3> <br>
 </div>
 
 <a href="create/" class="btn btn-sm btn-primary">Adicionar categoria</a> <br><br>
@@ -21,7 +21,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for categoria in categoriaes %}
+                {% for categoria in categorias %}
                 <tr>
                     <td> {{ categoria.nome }} </td>
                     {% if perms.categoria.detail_categoria %}
