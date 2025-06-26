@@ -20,6 +20,10 @@
           <th>Nome</th>
           <th>Autor</th>
           <th>Categoria</th>
+          <th>ISBN</th>
+          <th>Editora</th>
+          <th>Ano de publicação</th>
+          <th>Estoque</th>
           {% if perms.livro.detail_livro %}<th>Detalhe</th>{% endif %}
           {% if perms.livro.change_livro %}<th>Atualizar</th>{% endif %}
           {% if perms.livro.delete_livro %}<th>Deletar</th>{% endif %}
@@ -31,6 +35,10 @@
           <td>{{ livro.nome }}</td>
           <td>{{ livro.autor }}</td>
           <td>{{ livro.categoria }}</td>
+          <td>{{ livro.isbn }}</td>
+          <td>{{ livro.editora }}</td>
+          <td>{{ livro.ano_publicacao }}</td>
+          <td>{{ livro.quantidade }}</td>
           {% if perms.livro.detail_livro %}
           <td>
             <a href="/livro/{{ livro.id }}/" class="btn btn-outline-secondary btn-sm" title="Detalhar">
