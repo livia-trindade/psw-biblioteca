@@ -13,4 +13,5 @@ urlpatterns = [
     path('autor/', include('autor.urls')),
     path('categoria/', include('categoria.urls')),
     path('livro/', include('livro.urls')),
+    
     ]
