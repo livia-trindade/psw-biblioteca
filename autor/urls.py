@@ -1,6 +1,7 @@
 from django.urls import path
-from . import views 
+from . import views # Importando as views do app Autor
 
+# Lista de URLS do app Autor
 urlpatterns = [
     path('', views.index, name='index-autor'),
     path('<int:id_autor>/', views.detalha, name='index-detalha'),
