@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+# Adicionando os apps criados nas configurações gerais do projeto
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'biblioteca.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [str(BASE_DIR) + '/templates'], 
+        'DIRS': [str(BASE_DIR) + '/templates'], # Definindo o diretório onde o Django deve procurar os templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -108,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'America/Bahia'
+TIME_ZONE = 'America/Bahia' # Mudando o fuso horário para o registro correto do horário de criação dos usuários
 
 USE_I18N = True
 
@@ -127,6 +128,8 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Definindo as rotas de redirecionamento após o login, logout e tentativa de acesso a páginas que precisam do login
 LOGIN_REDIRECT_URL = '/usuario/'
 LOGOUT_REDIRECT_URL = '/conta/login/'
 LOGIN_URL = '/conta/login/'
