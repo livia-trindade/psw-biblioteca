@@ -72,93 +72,70 @@
 
 
   <!-- [ Main Content ] start -->
-  <div class="pc-container" >
-    <div class="pc-content"  >
+  <div class="pc-container">
+    <div class="pc-content">
       <!-- [ breadcrumb ] start -->
       <div class="page-header">
         <div class="page-block">
-          <div class="page-header-title">
-            <h5 class="mb-0 font-medium">Início</h5>
+
+          <!-- [ breadcrumb ] end -->
+
+          <!-- [ Main Content ] start -->
+
+          <div class="card table-card" style="border-radius: 8px ;border: 2px #6c757d ; padding: 30px;">
+
+            {% block content %}
+            {% endblock %}
           </div>
-          <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../dashboard/index.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="javascript: void(0)">Dashboard</a></li>
-            <li class="breadcrumb-item" aria-current="page">Default</li>
-          </ul>
-        </div>
-      </div>
-      <!-- [ breadcrumb ] end -->
 
-      <!-- [ Main Content ] start -->
+          <!-- [ Main Content ] end -->
+          <footer class="pc-footer">
+            <h3 style="font-size: 80%; font-weight: 300; color: #6c757d;"> Trabalho de PSW - Discentes: Lívia Trindade,
+              Luis Henrique e Pedro Henrique Xavier</h3>
+          </footer>
 
-      <div class="card table-card">
+          <!-- Required Js -->
+          <script src="{% static 'js/plugins/simplebar.min.js' %}"></script>
+          <script src="{% static 'js/plugins/popper.min.js' %}"></script>
+          <script src="{% static 'js/icon/custom-icon.js' %}"></script>
+          <script src="{% static 'js/plugins/feather.min.js' %}"></script>
+          <script src="{% static 'js/component.js' %}"></script>
+          <script src="{% static 'js/theme.js' %}"></script>
+          <script src="{% static 'js/script.js' %}"></script>
 
-        {% block content %}
-        {% endblock %}
-      </div>
-
-      <!-- [ Main Content ] end -->
-      <footer class="pc-footer">
-        <div class="footer-wrapper container-fluid mx-10">
-          <div class="grid grid-cols-12 gap-1.5">
-            <div class="col-span-12 sm:col-span-6 my-1">
-              <p class="m-0"></p>
-              <a href="https://codedthemes.com/"
-                class="text-theme-bodycolor dark:text-themedark-bodycolor hover:text-primary-500 dark:hover:text-primary-500"
-                target="_blank">CodedThemes</a>
-              , Built with ♥ for a smoother web presence.
-              </p>
-            </div>
-            <div class="col-span-12 sm:col-span-6 my-1 justify-self-end">
-              <p class="inline-block max-sm:mr-3 sm:ml-2">Distributed by <a href="https://themewagon.com"
-                  target="_blank">Themewagon</a></p>
-            </div>
+          <div class="floting-button fixed bottom-[50px] right-[30px] z-[1030]">
           </div>
-        </div>
-      </footer>
-
-      <!-- Required Js -->
-      <script src="{% static 'js/plugins/simplebar.min.js' %}"></script>
-      <script src="{% static 'js/plugins/popper.min.js' %}"></script>
-      <script src="{% static 'js/icon/custom-icon.js' %}"></script>
-      <script src="{% static 'js/plugins/feather.min.js' %}"></script>
-      <script src="{% static 'js/component.js' %}"></script>
-      <script src="{% static 'js/theme.js' %}"></script>
-      <script src="{% static 'js/script.js' %}"></script>
-
-      <div class="floting-button fixed bottom-[50px] right-[30px] z-[1030]">
-      </div>
 
 
-      <script>
-        layout_change('false');
-      </script>
+          <script>
+            layout_change('false');
+          </script>
 
 
-      <script>
-        layout_theme_sidebar_change('dark');
-      </script>
+          <script>
+            layout_theme_sidebar_change('dark');
+          </script>
 
 
-      <script>
-        change_box_container('false');
-      </script>
+          <script>
+            change_box_container('false');
+          </script>
 
-      <script>
-        layout_caption_change('true');
-      </script>
+          <script>
+            layout_caption_change('true');
+          </script>
 
-      <script>
-        layout_rtl_change('false');
-      </script>
+          <script>
+            layout_rtl_change('false');
+          </script>
 
-      <script>
-        preset_change('preset-1');
-      </script>
+          <script>
+            preset_change('preset-1');
+          </script>
 
-      <script>
-        main_layout_change('vertical');
-      </script>
+          <script>
+            main_layout_change('vertical');
+          </script>
 
 
 </body>
