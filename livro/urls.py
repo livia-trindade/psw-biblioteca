@@ -1,6 +1,7 @@
 from django.urls import path
-from . import views 
+from . import views # Importa as views de livro
 
+# Lista de urls de Livro
 urlpatterns = [
     path('', views.index, name='index-livro'),
     path('<int:id_livro>/', views.detalha, name='index-detalha'),
