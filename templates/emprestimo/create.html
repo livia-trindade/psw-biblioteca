@@ -1,20 +1,19 @@
 {% extends "_base.html" %}
-
 {% load static %}
 
 {% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Adicionar Empréstimo</h2>
 
-<form method="POST" action="">
-    {% csrf_token %}
-    {{form}} <br>
-    <div>
-        <a href="/emprestimo/">Voltar</a>
-        <button type="submit" class="btn btn-success">Salvar</button>
-    </div>
+    <form method="POST" class="card p-4 shadow-sm">
+        {% csrf_token %}
 
-</form>
+        {{ form.as_p }}
 
+        <div class="d-flex justify-content-between mt-4">
+            <a href="/emprestimo/" class="btn btn-secondary">Voltar</a>
+            <button type="submit" class="btn btn-success">Salvar</button>
+        </div>
+    </form>
+</div>
 {% endblock %}
-</body>
-
-</html>

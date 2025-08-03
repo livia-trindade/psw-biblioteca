@@ -1,20 +1,31 @@
 {% extends "_base.html" %}
 
 {% block content %}
-<p>{{emprestimo.usuario}}</p>
-<p>{{emprestimo.livro}}</p>
-<p>{{ emprestimo.data_emprestimo|date:"d/m/Y" }}</p>
-<p>
-   {% if emprestimo.data_devolucao %}
-   {{ emprestimo.data_devolucao|date:"d/m/Y" }}
-   {% else %}
-   <em>Não devolvido</em>
-   {% endif %}
-</p>
+<div class="container mt-4">
+   <div class="card shadow-sm">
+      <div class="card-body">
+         <h3 class="card-title text-primary mb-4">Detalhes do Empréstimo</h3>
+         <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Usuário:</strong> {{ emprestimo.usuario }}</li>
+            <li class="list-group-item"><strong>Livro:</strong> {{ emprestimo.livro }}</li>
+            <li class="list-group-item"><strong>Data do Empréstimo:</strong> {{ emprestimo.data_emprestimo|date:"d/m/Y"
+               }}</li>
+            <li class="list-group-item">
+               <strong>Data de Devolução:</strong>
+               {% if emprestimo.data_devolucao %}
+               {{ emprestimo.data_devolucao|date:"d/m/Y" }}
+               {% else %}
+               <em>Não devolvido</em>
+               {% endif %}
+            </li>
+         </ul>
 
-
-<div>
-   <a href="/emprestimo/">Voltar</a>
+         <div class="mt-4">
+            <a href="/emprestimo/" class="btn btn-outline-secondary">
+               ← Voltar
+            </a>
+         </div>
+      </div>
+   </div>
 </div>
-
 {% endblock %}
