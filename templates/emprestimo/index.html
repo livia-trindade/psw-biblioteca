@@ -1,0 +1,54 @@
+{% extends "_base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="text-center">
+    <h3>Listagem geral de empréstimos</h3> <br>
+</div>
+
+<a href="create/" class="btn btn-sm btn-primary">Adicionar Empréstimo</a> <br><br>
+
+<div>
+    <table style="width: 85%;">
+        <thead>
+            <tr>
+                <th>Usuário</th>
+                <th>Livro</th>
+                <th>Data do Empréstimo</th>
+                <th>Data de Devolução</th>
+                {% if perms.emprestimo.view_emprestimo %}<th>Detalhe</th>{% endif %}
+                {% if perms.emprestimo.change_emprestimo %}<th>Atualizar</th>{% endif %}
+                {% if perms.emprestimo.delete_emprestimo %}<th>Deletar</th>{% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for emprestimo in emprestimos %}
+            <tr>
+                <td>{{ emprestimo.usuario }}</td>
+                <td>{{ emprestimo.livro }}</td>
+                <td>{{ emprestimo.data_emprestimo|date:"d/m/Y" }}</td>
+                <td>
+                    {% if emprestimo.data_devolucao %}
+                        {{ emprestimo.data_devolucao|date:"d/m/Y" }}
+                    {% else %}
+                        <em>Não devolvido</em>
+                    {% endif %}
+                </td>
+                {% if perms.emprestimo.view_emprestimo %}
+                <td><a href="/emprestimo/{{ emprestimo.id }}">Detalhe</a></td>
+                {% endif %}
+                {% if perms.emprestimo.change_emprestimo %}
+                <td><a href="/emprestimo/update/{{ emprestimo.id }}">Atualizar</a></td>
+                {% endif %}
+                {% if perms.emprestimo.delete_emprestimo %}
+                <td><a href="/emprestimo/delete/{{ emprestimo.id }}">Deletar</a></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
