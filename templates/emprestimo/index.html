@@ -2,19 +2,19 @@
 {% load static %}
 
 {% block content %}
-<div class="container mt-4">
+<div class="container my-5">
     <div class="text-center mb-4">
-        <h3 class="fw-bold">Lista de Empréstimos</h3>
+        <h3 class="fw-bold">Listagem Geral de Empréstimos</h3>
     </div>
 
-    <div class="d-flex justify-content-end mb-3">
-        <a href="create/" class="btn btn-primary btn-sm">
+    <div class="mb-3 text-end">
+        <a href="create/" class="btn btn-success btn-sm">
             <i class="bi bi-plus-circle"></i> Adicionar Empréstimo
         </a>
     </div>
 
     <div class="table-responsive">
-        <table class="table table-striped table-bordered table-hover align-middle text-center">
+        <table class="table table-hover table-bordered align-middle">
             <thead class="table-dark">
                 <tr>
                     <th>Usuário</th>
@@ -34,42 +34,30 @@
                     <td>{{ emprestimo.data_emprestimo|date:"d/m/Y" }}</td>
                     <td>
                         {% if emprestimo.data_devolucao %}
-                        {{ emprestimo.data_devolucao|date:"d/m/Y" }}
+                            {{ emprestimo.data_devolucao|date:"d/m/Y" }}
                         {% else %}
-                        <em>Não devolvido</em>
+                            <em>Não devolvido</em>
                         {% endif %}
                     </td>
-
                     {% if perms.emprestimo.view_emprestimo %}
                     <td>
-                        <a href="/emprestimo/{{ emprestimo.id }}/" class="btn btn-outline-secondary btn-sm"
-                            title="Detalhar">
-                            <i class="bi bi-eye"></i>
-                        </a>
+                        <a href="/emprestimo/{{ emprestimo.id }}/" class="btn btn-info btn-sm">Detalhe</a>
                     </td>
                     {% endif %}
-
                     {% if perms.emprestimo.change_emprestimo %}
                     <td>
-                        <a href="/emprestimo/update/{{ emprestimo.id }}/" class="btn btn-outline-warning btn-sm"
-                            title="Editar">
-                            <i class="bi bi-pencil-square"></i>
-                        </a>
+                        <a href="/emprestimo/update/{{ emprestimo.id }}/" class="btn btn-warning btn-sm">Atualizar</a>
                     </td>
                     {% endif %}
-
                     {% if perms.emprestimo.delete_emprestimo %}
                     <td>
-                        <a href="/emprestimo/delete/{{ emprestimo.id }}/" class="btn btn-outline-danger btn-sm"
-                            title="Excluir">
-                            <i class="bi bi-trash3"></i>
-                        </a>
+                        <a href="/emprestimo/delete/{{ emprestimo.id }}/" class="btn btn-danger btn-sm">Deletar</a>
                     </td>
                     {% endif %}
                 </tr>
                 {% empty %}
                 <tr>
-                    <td colspan="7" class="text-muted">Nenhum empréstimo cadastrado.</td>
+                    <td colspan="7" class="text-center text-muted">Nenhum empréstimo cadastrado.</td>
                 </tr>
                 {% endfor %}
             </tbody>
