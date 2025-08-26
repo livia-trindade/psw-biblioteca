@@ -1,5 +1,5 @@
 # Importa a função render para renderizar templates HTML
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 
 # Importa classes de resposta HTTP para redirecionamento e respostas simples
 from django.http import HttpResponse, HttpResponseRedirect
@@ -10,7 +10,14 @@ from .forms import EmprestimoForm
 
 # Importa decoradores para exigir login e permissões específicas
 from django.contrib.auth.decorators import login_required, permission_required
+from django.utils import timezone
 
+def marcar_como_devolvido(request, pk):
+    emprestimo = get_object_or_404(Emprestimo, pk=pk)
+    if request.method == 'POST':
+        emprestimo.data_devolucao = timezone.now().date()  # Data atual
+        emprestimo.save()  # Salva e atualiza o status automaticamente
+    return redirect('index-emprestimo')  # ou para a página de detalhes
 
 # View que lista todos os empréstimos cadastrados - exibida apenas para usuários logados e com permissão 'view_emprestimo'
 @login_required

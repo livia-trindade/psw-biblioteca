@@ -7,5 +7,6 @@ urlpatterns = [
     path('<int:id_emprestimo>/', views.detalha, name='index-detalha'),
     path('create/', views.create, name='create-emprestimo'),
     path('update/<int:id_emprestimo>/', views.update, name='update-emprestimo'),
-    path('delete/<int:id_emprestimo>/', views.delete, name='delete-emprestimo')
+    path('delete/<int:id_emprestimo>/', views.delete, name='delete-emprestimo'),
+     path('devolver/<int:pk>/', views.marcar_como_devolvido, name='emprestimo_devolver')
 ]

@@ -21,44 +21,86 @@
                     <th>Livro</th>
                     <th>Data do Empréstimo</th>
                     <th>Data de Devolução</th>
-                    {% if perms.emprestimo.view_emprestimo %}<th>Detalhe</th>{% endif %}
-                    {% if perms.emprestimo.change_emprestimo %}<th>Atualizar</th>{% endif %}
-                    {% if perms.emprestimo.delete_emprestimo %}<th>Deletar</th>{% endif %}
-                </tr>
-            </thead>
-            <tbody>
-                {% for emprestimo in emprestimos %}
-                <tr>
-                    <td>{{ emprestimo.usuario }}</td>
-                    <td>{{ emprestimo.livro }}</td>
-                    <td>{{ emprestimo.data_emprestimo|date:"d/m/Y" }}</td>
-                    <td>
-                        {% if emprestimo.data_devolucao %}
-                            {{ emprestimo.data_devolucao|date:"d/m/Y" }}
-                        {% else %}
-                            <em>Não devolvido</em>
-                        {% endif %}
-                    </td>
+                    <th>Status</th>
                     {% if perms.emprestimo.view_emprestimo %}
-                    <td>
-                        <a href="/emprestimo/{{ emprestimo.id }}/" class="btn btn-info btn-sm">Detalhe</a>
-                    </td>
+                        <th>Detalhe</th>
                     {% endif %}
                     {% if perms.emprestimo.change_emprestimo %}
-                    <td>
-                        <a href="/emprestimo/update/{{ emprestimo.id }}/" class="btn btn-warning btn-sm">Atualizar</a>
-                    </td>
+                        <th>Atualizar</th>
+                        <th>Devolver</th>
                     {% endif %}
                     {% if perms.emprestimo.delete_emprestimo %}
-                    <td>
-                        <a href="/emprestimo/delete/{{ emprestimo.id }}/" class="btn btn-danger btn-sm">Deletar</a>
-                    </td>
+                        <th>Deletar</th>
                     {% endif %}
                 </tr>
+            </thead>
+
+            <tbody>
+                {% for emprestimo in emprestimos %}
+                    <tr>
+                        <td>{{ emprestimo.usuario }}</td>
+                        <td>{{ emprestimo.livro }}</td>
+                        <td>{{ emprestimo.data_emprestimo|date:"d/m/Y" }}</td>
+                        <td>
+                            {% if emprestimo.data_devolucao %}
+                                {{ emprestimo.data_devolucao|date:"d/m/Y" }}
+                            {% else %}
+                                <em>Não devolvido</em>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if emprestimo.status == 'andamento' %}
+                                <span class="badge bg-primary">Em andamento</span>
+                            {% elif emprestimo.status == 'atrasado' %}
+                                <span class="badge bg-danger">Atrasado</span>
+                            {% elif emprestimo.status == 'devolvido' %}
+                                <span class="badge bg-success">Devolvido</span>
+                            {% endif %}
+                        </td>
+
+                        {% if perms.emprestimo.view_emprestimo %}
+                            <td>
+                                <a href="/emprestimo/{{ emprestimo.id }}/" class="btn btn-info btn-sm">
+                                    Detalhe
+                                </a>
+                            </td>
+                        {% endif %}
+
+                        {% if perms.emprestimo.change_emprestimo %}
+                            <td>
+                                <a href="/emprestimo/update/{{ emprestimo.id }}/" class="btn btn-warning btn-sm">
+                                    Atualizar
+                                </a>
+                            </td>
+
+                            <td>
+                                {% if emprestimo.status != 'devolvido' %}
+                                    <form action="{% url 'emprestimo_devolver' emprestimo.id %}" method="post" style="display:inline;">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-success btn-sm">
+                                            Marcar como Devolvido
+                                        </button>
+                                    </form>
+                                {% else %}
+                                    <span class="text-success">Devolvido</span>
+                                {% endif %}
+                            </td>
+                        {% endif %}
+
+                        {% if perms.emprestimo.delete_emprestimo %}
+                            <td>
+                                <a href="/emprestimo/delete/{{ emprestimo.id }}/" class="btn btn-danger btn-sm">
+                                    Deletar
+                                </a>
+                            </td>
+                        {% endif %}
+                    </tr>
                 {% empty %}
-                <tr>
-                    <td colspan="7" class="text-center text-muted">Nenhum empréstimo cadastrado.</td>
-                </tr>
+                    <tr>
+                        <td colspan="9" class="text-center text-muted">
+                            Nenhum empréstimo cadastrado.
+                        </td>
+                    </tr>
                 {% endfor %}
             </tbody>
         </table>
