@@ -9,11 +9,11 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 class UsuarioForm(UserCreationForm):
     class Meta:
         model = Usuario
-        fields = ['nome', 'telefone', 'endereco']
+        fields = ['nome', 'telefone', 'cidade', 'rua', 'bairro', 'numero']
 
 # Formulário para editar um usuário existente, utilizando o UserChangeForm do Django
 class UsuarioEditForm(UserChangeForm):
     class Meta:
         model = Usuario
-        fields = ['nome', 'telefone', 'endereco']
+        fields = ['nome', 'telefone','cidade', 'rua', 'bairro', 'numero']
         

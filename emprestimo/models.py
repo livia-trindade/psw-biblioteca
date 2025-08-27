@@ -25,9 +25,9 @@ class Emprestimo(models.Model):
     )
     livro = models.ForeignKey(Livro, on_delete=models.SET_NULL, null=True)
     
-    data_emprestimo = models.DateField(default=timezone.now)
-    data_prevista_devolucao = models.DateField(blank=True, null=True)
-    data_devolucao = models.DateField(null=True, blank=True)
+    data_emprestimo = models.DateField(default=timezone.now) #
+    data_prevista_devolucao = models.DateField(blank=True, null=True) #
+    data_devolucao = models.DateField(null=True, blank=True) #
     
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='andamento')
 

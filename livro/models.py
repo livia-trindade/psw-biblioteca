@@ -14,11 +14,11 @@ class Livro(models.Model):
     # Campo ISBN - máximo de 13 caracteres e valor único
     isbn = models.CharField("ISBN", max_length=13, unique=True)
 
-    editora = models.CharField(max_length=100, blank=True, null=True)
     ano_publicacao = models.PositiveIntegerField(blank=True, null=True)
+    autor = models.ManyToManyField(Autor, blank=True)
+    categoria = models.ManyToManyField(Categoria, blank=True)
     quantidade = models.PositiveIntegerField("Estoque", default=1)
-    autor = models.ForeignKey(Autor, on_delete=models.SET_NULL, null=True, blank=True)
-    categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True, blank=True)
+    editora = models.CharField(max_length=100, blank=True, null=True)
 
 
     class Meta:

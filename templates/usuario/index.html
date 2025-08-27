@@ -20,7 +20,10 @@
         <tr>
           <th>Nome</th>
           <th>Telefone</th>
-          <th>Endereço</th>
+          <th>Cidade</th>
+          <th>Rua</th>
+          <th>Bairro</th>
+          <th>Número</th>
           <th>Criado em</th>
           {% if perms.usuario.detail_usuario %}<th>Detalhe</th>{% endif %}
           {% if perms.usuario.change_usuario %}<th>Atualizar</th>{% endif %}
@@ -32,7 +35,10 @@
         <tr>
           <td>{{ usuario.nome }}</td>
           <td>{{ usuario.telefone }}</td>
-          <td>{{ usuario.endereco }}</td>
+          <td>{{ usuario.cidade }}</td>
+          <td>{{ usuario.rua }}</td>
+          <td>{{ usuario.bairro }}</td>
+          <td>{{ usuario.numero }}</td>
           <td>{{ usuario.criado_em|date:"d/m/Y H:i" }}</td>
           {% if perms.usuario.detail_usuario %}
           <td>

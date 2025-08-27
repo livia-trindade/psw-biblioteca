@@ -12,6 +12,7 @@ from .forms import EmprestimoForm
 from django.contrib.auth.decorators import login_required, permission_required
 from django.utils import timezone
 
+@login_required
 def marcar_como_devolvido(request, pk):
     emprestimo = get_object_or_404(Emprestimo, pk=pk)
     if request.method == 'POST':

@@ -5,7 +5,10 @@ from django.contrib.auth.models import User
 class Usuario(User):
     nome = models.CharField(max_length=100)
     telefone = models.CharField(max_length=100)
-    endereco = models.CharField(max_length=100)
+    cidade = models.CharField(max_length=100)
+    rua = models.CharField(max_length=100)
+    bairro = models.CharField(max_length=100)
+    numero = models.CharField(max_length=100)
     criado_em = models.DateTimeField(auto_now_add=True)
 
     class Meta:
