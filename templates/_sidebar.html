@@ -1,67 +1,57 @@
 {% load static %}
-
+<!-- [ Sidebar Menu ] start -->
 <nav class="pc-sidebar">
   <div class="navbar-wrapper">
     <div class="m-header flex items-center py-4 px-6 h-header-height">
       <a href="../dashboard/index.html" class="b-brand flex items-center gap-3">
         <!-- ========   Change your logo from here   ============ -->
-        <h2 style="font-size: 20px; font-weight: bold; color: white; margin: 20px;">
-          <i class="bi bi-book"></i> Gerenciamento de Biblioteca
-        </h2>
-
+        <img src="{% static 'images/logo/logo.svg' %}"  alt="logo" />
         <img src="{% static 'images/favicon.svg' %}" class="img-fluid logo logo-sm" alt="logo" />
       </a>
     </div>
     <div class="navbar-content h-[calc(100vh_-_74px)] py-2.5">
       <ul class="pc-navbar">
         <li class="pc-item pc-caption">
-          <label>Início</label>
+          <label>Navegação</label>
         </li>
         <li class="pc-item">
         <li class="pc-item">
-          <a href="index.html" class="pc-link">
+          <a href="../dashboard/index.html" class="pc-link">
             <span class="pc-micon">
               <i data-feather="home"></i>
             </span>
             <span class="pc-mtext">Página Inicial</span>
           </a>
         </li>
-        <li class="pc-item pc-caption">
-          <label>Páginas</label>
-          <i data-feather="feather"></i>
-        </li>
-
+        
         <li class="pc-item pc-hasmenu">
           <a href="/usuario" class="pc-link">
-            <span class="pc-micon"> <i data-feather="user"></i></span>
+            <span class="pc-micon"> <i data-feather="edit"></i></span>
             <span class="pc-mtext">Usuários</span>
           </a>
         </li>
-
         <li class="pc-item pc-hasmenu">
           <a href="/autor" class="pc-link">
             <span class="pc-micon"> <i data-feather="type"></i></span>
             <span class="pc-mtext">Autores</span>
           </a>
         </li>
-
         <li class="pc-item pc-hasmenu">
-          <a href="/categoria" class="pc-link">
+           <a href="/categoria" class="pc-link">
             <span class="pc-micon"> <i data-feather="feather"></i></span>
             <span class="pc-mtext">Categorias</span>
           </a>
         </li>
 
         <li class="pc-item pc-hasmenu">
-          <a href="/livro" class="pc-link">
-            <span class="pc-micon"> <i data-feather="book"></i></span>
+           <a href="/livro" class="pc-link">
+            <span class="pc-micon"> <i data-feather="lock"></i></span>
             <span class="pc-mtext">Livros</span>
           </a>
         </li>
-
         <li class="pc-item pc-hasmenu">
           <a href="/emprestimo" class="pc-link">
-            <span class="pc-micon"> <i data-feather="calendar"></i></span>
+            <span class="pc-micon"> <i data-feather="user-plus"></i></span>
             <span class="pc-mtext">Empréstimos</span>
           </a>
         </li>
@@ -69,3 +59,4 @@
     </div>
   </div>
 </nav>
+<!-- [ Sidebar Menu ] end -->
