@@ -1,6 +1,6 @@
 # 📚 Sistema de Gerenciamento de Biblioteca
 Programação para Sistemas Web II – Trabalho Final
-Professor: Carlos Anderson
+ - Professor: Carlos Anderson
 
 
 Projeto apresentado ao Curso de Informática para Internet do Instituto Federal de Educaçãoo, Ciência e Tecnologia Baiano - Campus Guanambi, como requisito parcial para obtenção da nota parcial da disciplina de Programação para Sistemas Web, desenvolvido com o objetivo de gerenciar o controle de empréstimos de livros, bem como organizar suas características, como autor e categoria.
