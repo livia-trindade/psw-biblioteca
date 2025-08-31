@@ -56,3 +56,7 @@ def update(request, id_usuario):
 def delete(request, id_usuario):
     Usuario.objects.get(id=id_usuario).delete()
     return HttpResponseRedirect("/usuario/")
+
+
+def inicio(request):
+    return render(request, 'usuario/inicio.html')

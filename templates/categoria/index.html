@@ -30,17 +30,23 @@
           <td>{{ categoria.nome }}</td>
           {% if perms.categoria.detail_categoria %}
           <td>
-            <a href="/categoria/{{ categoria.id }}/" class="btn btn-info btn-sm">Detalhe</a>
+            <a href="/categoria/{{ categoria.id }}/" class="btn btn-info btn-sm">
+              <i class="bi bi-search"></i>
+            </a>
           </td>
           {% endif %}
           {% if perms.categoria.change_categoria %}
           <td>
-            <a href="/categoria/update/{{ categoria.id }}/" class="btn btn-warning btn-sm">Atualizar</a>
+            <a href="/categoria/update/{{ categoria.id }}/" class="btn btn-warning btn-sm">
+              <i class="bi bi-pencil-square"></i>
+            </a>
           </td>
           {% endif %}
           {% if perms.categoria.delete_categoria %}
           <td>
-            <a href="/categoria/delete/{{ categoria.id }}/" class="btn btn-danger btn-sm">Deletar</a>
+            <a href="/categoria/delete/{{ categoria.id }}/" class="btn btn-danger btn-sm">
+              <i class="bi bi-trash"></i>
+            </a>
           </td>
           {% endif %}
         </tr>

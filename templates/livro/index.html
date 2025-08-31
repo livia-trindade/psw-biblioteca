@@ -41,17 +41,23 @@
           <td>{{ livro.quantidade }}</td>
           {% if perms.livro.detail_livro %}
           <td>
-            <a href="/livro/{{ livro.id }}/" class="btn btn-info btn-sm">Detalhe</a>
+            <a href="/livro/{{ livro.id }}/" class="btn btn-info btn-sm">
+              <i class="bi bi-search"></i>
+            </a>
           </td>
           {% endif %}
           {% if perms.livro.change_livro %}
           <td>
-            <a href="/livro/update/{{ livro.id }}/" class="btn btn-warning btn-sm">Atualizar</a>
+            <a href="/livro/update/{{ livro.id }}/" class="btn btn-warning btn-sm">
+              <i class="bi bi-pencil-square"></i>
+            </a>
           </td>
           {% endif %}
           {% if perms.livro.delete_livro %}
           <td>
-            <a href="/livro/delete/{{ livro.id }}/" class="btn btn-danger btn-sm">Deletar</a>
+            <a href="/livro/delete/{{ livro.id }}/" class="btn btn-danger btn-sm">
+              <i class="bi bi-trash"></i>
+            </a>
           </td>
           {% endif %}
         </tr>

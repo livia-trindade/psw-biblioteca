@@ -10,6 +10,7 @@ from livro import views as views_livro
 # Lista de URLS do projeto
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views_usuario.inicio, name='inicio'),  # definindo a url da página inicial
     path('conta/', include('django.contrib.auth.urls')),
     path('usuario/', include('usuario.urls')),
     path('autor/', include('autor.urls')),

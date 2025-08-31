@@ -61,7 +61,7 @@
                         {% if perms.emprestimo.view_emprestimo %}
                             <td>
                                 <a href="/emprestimo/{{ emprestimo.id }}/" class="btn btn-info btn-sm">
-                                    Detalhe
+                                    <i class="bi bi-search"></i>
                                 </a>
                             </td>
                         {% endif %}
@@ -69,7 +69,7 @@
                         {% if perms.emprestimo.change_emprestimo %}
                             <td>
                                 <a href="/emprestimo/update/{{ emprestimo.id }}/" class="btn btn-warning btn-sm">
-                                    Atualizar
+                                    <i class="bi bi-pencil-square"></i>
                                 </a>
                             </td>
 
@@ -78,7 +78,7 @@
                                     <form action="{% url 'emprestimo_devolver' emprestimo.id %}" method="post" style="display:inline;">
                                         {% csrf_token %}
                                         <button type="submit" class="btn btn-success btn-sm">
-                                            Marcar como Devolvido
+                                            <i class="bi bi-box-arrow-in-down"></i>
                                         </button>
                                     </form>
                                 {% else %}
@@ -90,7 +90,7 @@
                         {% if perms.emprestimo.delete_emprestimo %}
                             <td>
                                 <a href="/emprestimo/delete/{{ emprestimo.id }}/" class="btn btn-danger btn-sm">
-                                    Deletar
+                                    <i class="bi bi-trash"></i>
                                 </a>
                             </td>
                         {% endif %}

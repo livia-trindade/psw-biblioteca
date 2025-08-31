@@ -1,19 +1,16 @@
-from .models import Usuario
-from django.forms import ModelForm
-
-# Importando os formulários já prontos do Django para criação e edição de usuários
+from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-
+from .models import Usuario
 
 # Formulário para criar um novo usuário, utilizando o UserCreationForm do Django
 class UsuarioForm(UserCreationForm):
     class Meta:
         model = Usuario
-        fields = ['nome', 'telefone', 'cidade', 'rua', 'bairro', 'numero']
+        # Inclui username, senhas e seus campos extras
+        fields = ['username', 'nome', 'telefone', 'cidade', 'rua', 'bairro', 'numero','password1', 'password2']
 
 # Formulário para editar um usuário existente, utilizando o UserChangeForm do Django
 class UsuarioEditForm(UserChangeForm):
     class Meta:
         model = Usuario
-        fields = ['nome', 'telefone','cidade', 'rua', 'bairro', 'numero']
-        
+        fields = ['username', 'nome', 'telefone','cidade', 'rua', 'bairro', 'numero']

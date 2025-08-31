@@ -1,6 +1,6 @@
 {% extends "_base.html" %}
 {% load static %}
-
+{% load crispy_forms_tags %}  {# usando o crispy forms#}
 {% block content %}
 <div class="card mx-auto" style="max-width: 600px;">
   <div class="card-header">
@@ -8,17 +8,18 @@
   </div>
   <div class="card-body">
     <form method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <div class="d-flex justify-content-between mt-3">
-        <a href="/categoria/" class="btn btn-outline-secondary">
-          <i class="bi bi-arrow-left"></i> Voltar
-        </a>
-        <button type="submit" class="btn btn-success">
-          <i class="bi bi-check-lg"></i> Salvar
-        </button>
-      </div>
-    </form>
+  {% csrf_token %}
+  {{ form|crispy }}
+  <div class="d-flex justify-content-between mt-3">
+    <a href="/categoria/" class="btn btn-outline-secondary">
+      <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+    <button type="submit" class="btn btn-success">
+      <i class="bi bi-check-lg"></i> Salvar
+    </button>
+  </div>
+</form>
+
   </div>
 </div>
 {% endblock %}

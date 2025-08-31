@@ -32,17 +32,23 @@
           <td>{{ autor.nacionalidade }}</td>
           {% if perms.autor.detail_autor %}
           <td>
-            <a href="/autor/{{ autor.id }}/" class="btn btn-info btn-sm">Detalhe</a>
+            <a href="/autor/{{ autor.id }}/" class="btn btn-info btn-sm">
+              <i class="bi bi-search"></i>
+            </a>
           </td>
           {% endif %}
           {% if perms.autor.change_autor %}
           <td>
-            <a href="/autor/update/{{ autor.id }}/" class="btn btn-warning btn-sm">Atualizar</a>
+            <a href="/autor/update/{{ autor.id }}/" class="btn btn-warning btn-sm">
+              <i class="bi bi-pencil-square"></i>
+            </a>
           </td>
           {% endif %}
           {% if perms.autor.delete_autor %}
           <td>
-            <a href="/autor/delete/{{ autor.id }}/" class="btn btn-danger btn-sm">Deletar</a>
+            <a href="/autor/delete/{{ autor.id }}/" class="btn btn-danger btn-sm">
+              <i class="bi bi-trash"></i>
+            </a>
           </td>
           {% endif %}
         </tr>

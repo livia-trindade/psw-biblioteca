@@ -1,19 +1,25 @@
 {% extends "_base.html" %}
-
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-
+<div class="card mx-auto" style="max-width: 600px;">
+  <div class="card-header">
+    <h5 class="mb-0">{% if form.instance.pk %}Atualizar{% else %}Criar{% endif %} Autor</h5>
+  </div>
+  <div class="card-body">
     <form method="POST" action="">
-         {% csrf_token %}
-         {{form}} <br>
-         <div >
-            <a href="/autor/" >Voltar</a>
-            <button type="submit" class="btn btn-success">Salvar</button>
-        </div>
- 
+      {% csrf_token %}
+      {{ form|crispy }}
+      <div class="d-flex justify-content-between mt-3">
+        <a href="/autor/" class="btn btn-outline-secondary">
+          <i class="bi bi-arrow-left"></i> Voltar
+        </a>
+        <button type="submit" class="btn btn-success">
+          <i class="bi bi-check-lg"></i> Salvar
+        </button>
+      </div>
     </form>
-    
+  </div>
+</div>
 {% endblock %}
-</body>
-</html>
