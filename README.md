@@ -11,7 +11,7 @@ Projeto apresentado ao Curso de Informática para Internet do Instituto Federal 
 - Criação de empréstimos de livros;
 - Visualização de usuários, livros, autores, categorias e empréstimos de livros;
 - Atualização de dados de usuários, livros, autores, categorias e empréstimos de livros;
-- Excluir registros de usuários, livros, autores, categorias e empréstimos de livros;
+- Exclusão registros de usuários, livros, autores, categorias e empréstimos de livros;
 
 ## ⚙️ Como Executar Localmente
 
