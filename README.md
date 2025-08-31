@@ -7,14 +7,11 @@ Projeto apresentado ao Curso de Informática para Internet do Instituto Federal 
 
 ## 🔧 Funcionalidades
 
-- Escurecer imagem
-- Clarear imagem
-- Negativar imagem
-- Espelhar imagem verticalmente
-- Aplicar filtro de Prewitt (detecção de bordas)
-- Desfocar imagem (Gaussiano)
-- Converter para tons de cinza
-- Pixelizar imagem
+- Cadastro de usuários, livros, autores e categorias (gêneros) de livros;
+- Criação de empréstimos de livros;
+- Visualização de usuários, livros, autores, categorias e empréstimos de livros;
+- Atualização de dados de usuários, livros, autores, categorias e empréstimos de livros;
+- Excluir registros de usuários, livros, autores, categorias e empréstimos de livros;
 
 ## ⚙️ Como Executar Localmente
 
