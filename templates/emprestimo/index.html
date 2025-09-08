@@ -17,11 +17,12 @@
         <table class="table table-hover table-bordered align-middle">
             <thead class="table-dark">
                 <tr>
-                    <th>Usuário</th>
+                    <th>Emprestado para</th>
                     <th>Livro</th>
                     <th>Data do Empréstimo</th>
                     <th>Data de Devolução</th>
                     <th>Status</th>
+                    <th>Emprestador</th>
                     {% if perms.emprestimo.view_emprestimo %}
                         <th>Detalhe</th>
                     {% endif %}
@@ -48,6 +49,7 @@
                                 <em>Não devolvido</em>
                             {% endif %}
                         </td>
+                        
                         <td>
                             {% if emprestimo.status == 'andamento' %}
                                 <span class="badge bg-primary">Em andamento</span>
@@ -58,6 +60,10 @@
                             {% endif %}
                         </td>
 
+                        <td>
+                            {{request.user.username}}
+                        </td>
+                        
                         {% if perms.emprestimo.view_emprestimo %}
                             <td>
                                 <a href="/emprestimo/{{ emprestimo.id }}/" class="btn btn-info btn-sm">
