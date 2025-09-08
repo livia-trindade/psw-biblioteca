@@ -6,7 +6,7 @@
       <div class="card-body">
          <h3 class="card-title text-primary mb-4">Detalhes do Empréstimo</h3>
          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>Usuário:</strong> {{ emprestimo.usuario }}</li>
+            <li class="list-group-item"><strong>Emprestado para:</strong> {{ emprestimo.usuario }}</li>
             <li class="list-group-item"><strong>Livro:</strong> {{ emprestimo.livro }}</li>
             <li class="list-group-item"><strong>Data do Empréstimo:</strong> {{ emprestimo.data_emprestimo|date:"d/m/Y" }}</li>
             <li class="list-group-item">
@@ -17,6 +17,7 @@
                <em>Não devolvido</em>
                {% endif %}
             </li>
+            <li class="list-group-item"><strong>Emprestador:</strong> {{request.user.username}}</li>
          </ul>
 
          <div class="mt-4">
