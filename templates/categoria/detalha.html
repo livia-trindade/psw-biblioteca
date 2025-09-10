@@ -3,15 +3,11 @@
 {% block content %}
 <div class="card">
   <div class="card-header">
-    <h4 class="mb-0">{{ categoria.nome }}</h4>
-  </div>
-  <div class="card-body">
+    <h2>{{ categoria.nome }}</h2>
     <p><strong>Descrição:</strong> {{ categoria.descricao }}</p>
   </div>
-  <div class="card-footer text-end">
-    <a href="/categoria/" class="btn btn-secondary btn-sm">
-      <i class="bi bi-arrow-left-circle"></i> Voltar
-    </a>
+  <div>
+    <br> <br> <a href="/categoria/" class="btn btn-secondary">Voltar</a>
   </div>
 </div>
 {% endblock %}
