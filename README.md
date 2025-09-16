@@ -77,3 +77,6 @@ Por exemplo, ao acessar a página de livros, o administrador poderá:
  - Lívia Trindade Vilasboas
  - Pedro Henrique Pereira Xavier
  - Luiz Henrique Viana Rocha
+
+## 🎥 Link para o vídeo demonstrando o sistema:
+https://youtu.be/pHmk2l5g8Io
